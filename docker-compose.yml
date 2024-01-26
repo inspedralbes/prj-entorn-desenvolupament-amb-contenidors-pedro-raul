@@ -31,10 +31,10 @@ services:
 
 # Servidor web NGINX per servir els fitxers estàtics pel port 80
 # Serveix els fitxers de la carpeta "front" 
-  nginx:
-    image: nginx:1.25.3-alpine
+  httpd:
+    image: php:7.2-apache
     volumes:
-      - ./front:/usr/share/nginx/html
+      - ./front:/var/www/html/
     ports:
       - 80:80
     depends_on:
