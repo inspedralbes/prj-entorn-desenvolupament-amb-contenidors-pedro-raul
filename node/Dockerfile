@@ -21,8 +21,6 @@ COPY package*.json .
 # Install app dependencies
 RUN npm install
 
-COPY * .
-
 #expose port 8080 to the outside world
 EXPOSE 8080
 

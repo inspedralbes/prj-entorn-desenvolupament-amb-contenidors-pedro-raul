@@ -21,7 +21,6 @@ services:
 # que ja hi hagi
   node:
     build: ./node
-    # image: node:19-buster-slim
     volumes:
       - ./node:/home/node/app
     # working_dir: /home/node/app
@@ -42,11 +41,11 @@ services:
       - node
 
 # Aplicació per accedir via web a la nostra base de dades, al port 9090
-  adminer:
-    image: adminer:4.7.7
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - 9090:8080
+      - 9090:80
     depends_on:
       - db
 
