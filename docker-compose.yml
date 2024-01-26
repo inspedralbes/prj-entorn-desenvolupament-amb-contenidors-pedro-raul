@@ -32,7 +32,7 @@ services:
 # Servidor web NGINX per servir els fitxers estàtics pel port 80
 # Serveix els fitxers de la carpeta "front" 
   httpd:
-    image: php:7.2-apache
+    build: ./front
     volumes:
       - ./front:/var/www/html/
     ports:
