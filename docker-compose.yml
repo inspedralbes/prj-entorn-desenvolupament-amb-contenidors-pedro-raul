@@ -28,8 +28,14 @@ services:
     ports:
       - 8080:8080
 
+  next:
+    build: ./next
+    volumes:
+      - ./next:/home/node/app
+    ports:
+      - 3000:3000
 
-# Servidor web NGINX per servir els fitxers estàtics pel port 80
+# Servidor web Apache per servir els fitxers estàtics pel port 80
 # Serveix els fitxers de la carpeta "front" 
   httpd:
     build: ./front
