@@ -31,14 +31,7 @@ services:
 
 # Servidor web NGINX per servir els fitxers estàtics pel port 80
 # Serveix els fitxers de la carpeta "front" 
-  httpd:
-    build: ./front
-    volumes:
-      - ./front:/var/www/html/
-    ports:
-      - 80:80
-    depends_on:
-      - node
+
 
 # Aplicació per accedir via web a la nostra base de dades, al port 9090
   phpmyadmin:
