@@ -49,6 +49,20 @@ services:
     depends_on:
       - db
 
+# Laravel application
+  laravel:
+    build: ./laravel
+    volumes:
+      - ./laravel:/var/www/html
+    ports:
+      - 8000:80
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    command: /bin/sh -c "composer install --no-interaction && apache2-foreground"
+    depends_on:
+      - db
+
+
 # Base de dades MySQL (db)
 # anomeneu-la com vulgueu, però recordeu que ha de coincidir amb el nom
 # que poseu a la configuració de la connexió de l'aplicació (i el depends_on de l'adminer)

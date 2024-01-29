@@ -7,16 +7,13 @@
 # Per veure els logs: docker logs <container_id>
 # O directament executar-lo en mode interactiu (-it enlloc de  -d)) : 
 # docker run -it -p 8080:8080 server_ws
-
-FROM node:19-bullseye-slim
-
+FROM node:20.8.1-bullseye-slim
 
 # Set the working directory to /app
 WORKDIR /usr/src/app
 
 # Copy the current directory contents into the container at /app
 COPY package*.json .
-
 
 # Install app dependencies
 RUN npm install
