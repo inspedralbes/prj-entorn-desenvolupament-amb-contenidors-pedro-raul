@@ -61,6 +61,14 @@ services:
     command: /bin/sh -c "composer install --no-interaction && apache2-foreground"
     depends_on:
       - db
+  
+  next:
+    build: ./next
+    volumes:
+      - ./next:/usr/src/app
+    ports:
+      - 3000:3000
+    command: /bin/sh -c "npm install && npm run dev"
 
 
 # Base de dades MySQL (db)

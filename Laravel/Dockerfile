@@ -16,7 +16,7 @@ RUN apt-get update && \
 # Configura el servidor Apache
 RUN a2enmod rewrite
 
-RUN chown -R 777 ./storage
+# RUN chown -R 777 ./storage
 
 
 # Instala Composer (el administrador de dependencias de PHP)

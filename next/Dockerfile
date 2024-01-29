@@ -7,20 +7,16 @@
 # Per veure els logs: docker logs <container_id>
 # O directament executar-lo en mode interactiu (-it enlloc de  -d)) : 
 # docker run -it -p 8080:8080 server_ws
+
 FROM node:20.8.1-bullseye-slim
 
 # Set the working directory to /app
-WORKDIR /home/node/app
+WORKDIR /usr/src/app
 
 # Copy the current directory contents into the container at /app
 COPY package*.json .
 
-# Install app dependencies
-RUN npm install
-
 #expose port 8080 to the outside world
-EXPOSE 8080
+EXPOSE 3000
 
-# Run the app when the container launches
-CMD ["node", "server.js"]
 
