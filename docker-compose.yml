@@ -2,7 +2,7 @@
 services:
 
   node:
-    build: ./node
+    image: node:20.8.1-bullseye-slim
     volumes:
       - ./node:/usr/src/app
     working_dir: /usr/src/app 
