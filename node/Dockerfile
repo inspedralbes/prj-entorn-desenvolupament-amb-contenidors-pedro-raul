@@ -10,17 +10,11 @@
 FROM node:20.8.1-bullseye-slim
 
 # Set the working directory to /app
-WORKDIR /home/node/app
+WORKDIR /usr/src/app
 
 # Copy the current directory contents into the container at /app
 COPY package*.json .
 
-# Install app dependencies
-RUN npm install
-
 #expose port 8080 to the outside world
 EXPOSE 8080
-
-# Run the app when the container launches
-CMD ["node", "server.js"]
 
