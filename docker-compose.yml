@@ -20,9 +20,9 @@ services:
       - db
 
   laravel:
-    build: ./laravel
+    build: ./Laravel
     volumes:
-      - ./laravel:/var/www/html
+      - ./Laravel:/var/www/html
     ports:
       - 8000:80
     environment:
